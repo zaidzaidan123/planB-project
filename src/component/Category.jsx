@@ -1,9 +1,8 @@
 import React from "react";
 import DeadSea from "../assets/deadsea.svg";
-// import pella from "../assets/pella.svg";
+import pella from "../assets/Pella.svg";
 import walkOverland from "../assets/walkover.svg";
 import CategoryCard from "./CategoryCard";
-// import pella from "../assets/pella.svg";
 
 const Category = () => {
   const arrayCards = [
@@ -12,7 +11,7 @@ const Category = () => {
       title: "Categories",
     },
     {
-      img: 'pella',
+      img: pella,
       title: "About Jordan",
     },
     {
