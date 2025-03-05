@@ -22,12 +22,9 @@ const Header = () => {
   return (
     <header className="bg-white shadow-md w-full">
       <div className="relative flex justify-end items-center p-4">
-        {/* Logo - Positioned Larger & Overlapping Hero Section */}
         <a href="/" className="absolute top-[-20px] left-0 mt-6 z-100">
           <img src={logo} alt="Logo" className="h-20 md:h-28 lg:h-32" />
         </a>
-
-        {/* Navigation */}
         <nav className="hidden xl:flex space-x-10 text-teal-700 font-medium justify-end w-full">
           {menuItems.map((item, index) => (
             <a key={index} href="/" className="hover:text-black">
@@ -35,8 +32,6 @@ const Header = () => {
             </a>
           ))}
         </nav>
-
-        {/* Login & Language Selector */}
         <div className="flex items-center gap-4 ml-5">
           <a
             href="/login"
@@ -44,8 +39,6 @@ const Header = () => {
           >
             Login
           </a>
-
-          {/* Language Selector */}
           <div className="relative">
             <select
               value={language}
@@ -57,15 +50,11 @@ const Header = () => {
             </select>
             <span className="absolute right-1 top-1/2 -translate-y-1/2 text-teal-700">▼</span>
           </div>
-
-          {/* Mobile Menu Button */}
           <button onClick={toggleMenu} className="xl:hidden text-gray-700">
             {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>
         </div>
       </div>
-
-      {/* Mobile Menu */}
       {isOpen && (
         <nav className="xl:hidden bg-white shadow-md absolute top-20 z-100 left-0 w-full py-4 flex flex-col items-center">
           {menuItems.map((item, index) => (

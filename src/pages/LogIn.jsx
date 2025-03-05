@@ -12,7 +12,7 @@ import one from "../assets/one.png";
 import petra from "../assets/petra.png";
 import wadiRumHero from "../assets/wadiRumHero.png";
 import logo from "../assets/logo.svg";
-import { FaEnvelope, FaLock } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
 import { IoMdEyeOff } from "react-icons/io";
 
 const LogIn = () => {
@@ -24,8 +24,12 @@ const LogIn = () => {
       password: "",
     },
     validationSchema: Yup.object({
-      email: Yup.string().email("Invalid email address").required("Email is required"),
-      password: Yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
+      email: Yup.string()
+        .email("Invalid email address")
+        .required("Email is required"),
+      password: Yup.string()
+        .min(6, "Password must be at least 6 characters")
+        .required("Password is required"),
     }),
     onSubmit: (values) => {
       console.log("Form submitted with values:", values);
@@ -40,15 +44,29 @@ const LogIn = () => {
           style={{ backgroundImage: `url(${wadiRumHero})` }}
         >
           <div className="relative w-1/2 flex flex-col justify-between">
-            <img src={logo} alt="PlanBC Travel" className="w-[400px] h-[200px] mb-4" />
+            <a href="/">
+              <img
+                src={logo}
+                alt="PlanBC Travel"
+                className="w-[400px] h-[200px] mb-4"
+              />
+            </a>
             <h1 className="text-2xl font-bold text-black">
-              Travel is the only purchase that enriches you in ways beyond material wealth
+              Travel is the only purchase that enriches you in ways beyond
+              material wealth
             </h1>
           </div>
           <div className="relative z-10 bg-white text-black p-8 rounded-lg shadow-lg w-full xl:w-1/3 mt-3">
-            <h2 className="text-2xl font-bold text-center">Don't just imagine the Trip, Experience it!</h2>
-            <p className="text-center text-gray-600 mb-4">We'll help you plan dream escapes.</p>
-            <form onSubmit={formik.handleSubmit} className="flex flex-col gap-3 mb-5">
+            <h2 className="text-2xl font-bold text-center">
+              Don't just imagine the Trip, Experience it!
+            </h2>
+            <p className="text-center text-gray-600 mb-4">
+              We'll help you plan dream escapes.
+            </p>
+            <form
+              onSubmit={formik.handleSubmit}
+              className="flex flex-col gap-3 mb-5"
+            >
               <div className="relative">
                 <FaEnvelope className="absolute right-4 top-4 text-gray-400" />
                 <input
@@ -59,7 +77,9 @@ const LogIn = () => {
                   {...formik.getFieldProps("email")}
                 />
                 {formik.touched.email && formik.errors.email ? (
-                  <p className="text-red-500 text-sm mt-1">{formik.errors.email}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {formik.errors.email}
+                  </p>
                 ) : null}
               </div>
               <div className="relative">
@@ -72,7 +92,9 @@ const LogIn = () => {
                 />
                 <IoMdEyeOff className="absolute right-4 top-4 text-gray-400 cursor-pointer" />
                 {formik.touched.password && formik.errors.password ? (
-                  <p className="text-red-500 text-sm mt-1">{formik.errors.password}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {formik.errors.password}
+                  </p>
                 ) : null}
               </div>
               <div className="flex items-center justify-between w-full text-sm">
@@ -91,14 +113,22 @@ const LogIn = () => {
                   </div>
                   Remember me
                 </label>
-                <a href="#" className="text-gray-500">Forgot Password?</a>
+                <a href="#" className="text-gray-500">
+                  Forgot Password?
+                </a>
               </div>
-              <button type="submit" className="w-full mt-6 bg-teal-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-teal-700 transition-all">
+              <button
+                type="submit"
+                className="w-full mt-6 bg-teal-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-teal-700 transition-all"
+              >
                 Login
               </button>
             </form>
             <p className="mt-4 text-center text-sm text-gray-600">
-              Don't have an account? <a href="#" className="text-teal-600 font-semibold">Sign up!</a>
+              Don't have an account?{" "}
+              <a href="#" className="text-teal-600 font-semibold">
+                Sign up!
+              </a>
             </p>
           </div>
         </div>
@@ -115,7 +145,6 @@ const LogIn = () => {
           <img src={one} alt="Partner 4" className="h-24 object-contain" />
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

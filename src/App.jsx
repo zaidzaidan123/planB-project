@@ -1,24 +1,8 @@
 import "./App.css";
-import Category from "./component/Category";
-import ExpertGuidance from "./component/ExpertGuidance";
-import Footer from "./component/footer";
-import Header from "./component/Header";
-import HeroSection from "./component/HeroSection";
-import WhyChooseSection from "./component/whyChoose";
-import Login from "./pages/LogIn";
+import AppRouter from "./routes/Router";
 
 function App() {
-  return (
-    <>
-      {/* <Header/>
-      <HeroSection/>
-      <Category/>
-      <ExpertGuidance/>
-      <WhyChooseSection />
-      <Footer /> */}
-      <Login />
-    </>
-  );
+  return <AppRouter />;
 }
 
 export default App;
