@@ -1,6 +1,7 @@
 import React from "react";
 import ExpertGuideCard from "./ExpertGuideCard";
 import image from "../assets/image.svg";
+import TitleWithLines from "./TitleWithLines";
 
 const ExpertGuidance = () => {
   const array = [
@@ -22,13 +23,7 @@ const ExpertGuidance = () => {
   ];
   return (
     <div>
-      <div className="flex items-center px-12 gap-12 md:gap-28 mb-20">
-        <hr className="h-4 w-full text-[#8A8890]" />
-        <h2 className="text-[#167989] font-bold text-2xl w-full text-center">
-          Expert Guidance
-        </h2>
-        <hr className="h-4 w-full text-[#8A8890]" />
-      </div>
+      <TitleWithLines title={"Expert Guidance"} />
       <div className="flex gap-28 px-16 md:px-24 flex-col md:flex-row">
         <div className="flex flex-col gap-14 md:w-1/2">
           {array.map((card, index) => {

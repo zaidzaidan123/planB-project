@@ -5,16 +5,18 @@ import Footer from "./component/footer";
 import Header from "./component/Header";
 import HeroSection from "./component/HeroSection";
 import WhyChooseSection from "./component/whyChoose";
+import Login from "./pages/LogIn";
 
 function App() {
   return (
     <>
-    <Header/>
+      {/* <Header/>
       <HeroSection/>
       <Category/>
       <ExpertGuidance/>
       <WhyChooseSection />
-      <Footer />
+      <Footer /> */}
+      <Login />
     </>
   );
 }
